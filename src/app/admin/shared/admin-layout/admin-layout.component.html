@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+
+  <span>My first shop</span>
+  <span class="example-spacer"></span>
+  <ul *ngIf="auth.isAuthenticated(); else login">
+    <li><a [routerLink]="['/admin', 'dashboard']">Dashboard</a></li>
+    <li><a [routerLink]="['/admin', 'add']">Add Product</a></li>
+    <li><a [routerLink]="['/admin', 'orders']">Orders</a></li>
+    <li><a [routerLink]="['/admin']" (click)="logout()">Logout</a></li>
+  </ul>
+
+  <ng-template #login>
+    <ul>
+      <li><a [routerLink]="['/admin', 'login']">Login</a></li>
+    </ul>
+  </ng-template>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
