@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(public productDerv: ProductService) {
     // Create 100 users
-    
+
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource();

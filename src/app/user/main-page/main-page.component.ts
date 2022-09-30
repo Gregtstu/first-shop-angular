@@ -15,7 +15,7 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
    this.productServ.getAll().subscribe( res =>{
-     this.products$ = res
+    this.products$ = res;
    })
   }
 

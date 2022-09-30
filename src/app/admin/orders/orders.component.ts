@@ -20,7 +20,7 @@ export class OrdersComponent implements OnInit {
 
   constructor(private orderServ: OrderService) {
     // Create 100 users
-    
+
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource();
@@ -62,12 +62,12 @@ export class OrdersComponent implements OnInit {
     this.orderServ.deleteProduct(id)
       .subscribe({
         next: (res) => {
-          alert('Product deleted sucsessful');
+          alert('Заказ удален!');
           this.getAllProducts();
 
         },
         error: () => {
-          alert('error while product deleting');
+          alert('На данный момент заказов нет!');
         }
       });
     }

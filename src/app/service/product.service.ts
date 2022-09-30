@@ -5,7 +5,7 @@ import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 export interface IProduct {
-  
+
 data?:Data;
 foto?: string;
 information?:string;
@@ -42,7 +42,7 @@ export class ProductService {
   getAll():Observable<any> {
     return this.http.get<any>(`${environment.fbDbUrl}/products.json`)
     .pipe( map ( res => {
-  
+
       return Object.keys(res)
       .map( key => ({
         ...res[key],
@@ -73,11 +73,11 @@ export class ProductService {
   }
 
   setType(type:any){
-    return this.type = type; 
+    return this.type = type;
   }
 
   addProductInCart(product:IProduct){
-    this.cartProducts.push(product);    
+    this.cartProducts.push(product);
   }
 
   removeProductInCart(id:IProduct){
